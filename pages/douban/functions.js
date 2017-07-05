@@ -24,6 +24,30 @@ module.exports = {
       }
     })
   },
+  getActivities: function (cb) {
+    wx.request({
+      url: 'http://devel.lemoland.com/api/activities',
+      header: {
+        "Content-Type": "json",
+      },
+      success: function (res) {
+        console.log(res.data)
+        cb(res.data)
+      }
+    })
+  },
+  getCourses: function (cb) {
+    wx.request({
+      url: 'http://devel.lemoland.com/api/courses',
+      header: {
+        "Content-Type": "json",
+      },
+      success: function (res) {
+        console.log(res.data)
+        cb(res.data)
+      }
+    })
+  },
   getCity: function (cb) {
     this.getLocation(function (location) {
       cb(location.addressComponent.city.replace('市', ''))

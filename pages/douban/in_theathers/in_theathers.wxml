@@ -5,17 +5,17 @@
 </block>
 <block wx:else>
   <scroll-view style="height: 100%;" scroll-y="true" class="container film-list" bindscroll="scroll" bindscrolltolower="scrolltolower">
-    <block wx:for-items="{{films}}" wx:for-item="film">
+    <block wx:for-items="{{courses}}" wx:for-item="film">
       <view class="film-item" bindtap="viewDetail" data-id="{{film.id}}" data-title="{{film.title}}">
         <view class="film-image">
-          <image src="{{film.images.medium}}"></image>
+          <image src="{{film.media[0].url}}"></image>
         </view>
         <view class="film-info">
           <view>
-            <text class="film-title">{{film.title}}</text>
+            <text class="film-title">{{film.name}}</text>
             <text class="film-year">{{film.year}}</text>
           </view>
-          <view class="film-rating">
+          <!--<view class="film-rating">
             <block wx:if="{{film.rating.average > 0}}">
               <text class="label">评分</text>
               <text class="rating">{{film.rating.average}}</text>
@@ -35,7 +35,7 @@
             <block wx:for-items="{{film.casts}}" wx:for-item="cast">
               <text class="person">{{cast.name}}</text>
             </block>
-          </view>
+          </view>-->
         </view> 
       </view>
     </block>

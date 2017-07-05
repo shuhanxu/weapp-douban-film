@@ -6,7 +6,8 @@ Page({
     films: [],
     hasMore: true,
     showLoading: true,
-    start: 0
+    start: 0,
+    courses: []
   },
   onPullDownRefresh: function () {
     console.log('onPullDownRefresh', new Date())
@@ -16,13 +17,24 @@ Page({
   },
   onLoad: function () {
     var that = this
-    functions.getCity(function (city) {
-      functions.fetchFilms.call(that, url, city, 0, pageSize, function (data) {
-        that.setData({
-          showLoading: false
-        })
+
+    functions.getCourses(function(data){
+      console.log('got')
+      console.log(data)
+      that.courses = data;
+      
+      that.setData({
+        showLoading: false,
+        courses: data
       })
     })
+    // functions.getCity(function (city) {
+    //   functions.fetchFilms.call(that, url, city, 0, pageSize, function (data) {
+    //     that.setData({
+    //       showLoading: false
+    //     })
+    //   })
+    // })
   },
   scrolltolower: function () {
     var that = this

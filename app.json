@@ -13,18 +13,18 @@
       "pagePath": "pages/douban/in_theathers/in_theathers",
       "iconPath": "image/ing.png",
       "selectedIconPath": "image/ing-active.png",
-      "text": "正在热映"
+      "text": "课程"
     },{
       "pagePath": "pages/douban/coming_soon/coming_soon",
       "iconPath": "image/coming.png",
       "selectedIconPath": "image/coming-active.png",
-      "text": "即将上映"
+      "text": "动态"
     }]
   },
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#268dcd",
-    "navigationBarTitleText": "豆瓣电影",
+    "navigationBarTitleText": "乐米粒",
     "navigationBarTextStyle":"white",
     "enablePullDownRefresh": true
   },
